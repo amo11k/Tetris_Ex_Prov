@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,17 +43,13 @@ public class Tetris extends JFrame {
 		setContentPane(contentPane);
 		
 		scoreBoard = new ScoreBoard();
-		contentPane.add(scoreBoard, BorderLayout.SOUTH);
-		
 		nextShape = new NextShapeBoard();
-		nextShape.setBounds(100, 100, 1000, 2000);
 		contentPane.add(nextShape, BorderLayout.EAST);
+		contentPane.add(scoreBoard, BorderLayout.SOUTH);
 		
 		Board board = new Board(scoreBoard, nextShape);
 		contentPane.add(board, BorderLayout.CENTER);
 		
-		
-	
 		board.run();
 	}
 
